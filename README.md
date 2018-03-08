@@ -19,7 +19,7 @@ $ sudo mv ./kubectl /usr/local/bin/kubectl
 
 ```
 
-## Run
+## Example
 ```bash
 # create deployment
 $ kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080
@@ -30,6 +30,31 @@ $ kubectl expose deployment hello-minikube --type=NodePort
 # show url
 $ minikube service hello-minikube --url
 
+# delete deployment
+$ kubectl delete deployment hello-minikube
+
 # minikube stop
 $ minikube stop
 ```
+
+## Pod
+===== Useful Commands =====
+kubectl get pod
+kubectl describe pod <pod>
+kubectl expose pod <pod> --port=8080 --name=frontend
+kubectl port-forward <pod> 8080:8080
+kubectl attach <pod> -i
+kubectl exec <pod> -- command
+kubectl label pods <pod> mylabel=awesome
+kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
+=========================
+
+```bash
+kubectl create -f 01.pod.yml
+```
+
+## Service
+===== Useful Commands =====
+kubectl get service|svc
+kubectl delete service <service>
+=========================
