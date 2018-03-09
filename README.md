@@ -66,3 +66,18 @@ kubectl get service|svc
 kubectl delete service <service>
 =========================
 ```
+
+## Deployment
+```
+===== Useful Commands =====
+kubectl get deployments
+kubectl get rs
+kubectl get pods --show-labels
+kubectl rollout status deployment/echoserver
+kubectl set image deployment/echoserver echoserver=gcr.io/google-containers/echoserver:1.6
+kubectl edit deployment/echoserver
+kubectl rollout history deployment/echoserver
+kubectl rollout undo deployment/echoserver
+kubectl rollout undo deployment/echoserver --to-revision=n
+=========================
+```

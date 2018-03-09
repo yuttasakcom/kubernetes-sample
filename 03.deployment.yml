@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: echoserver
@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       - name: echoserver
-        image: gcr.io/google-containers/echoserver:1.6
+        image: gcr.io/google-containers/echoserver:1.4
         ports:
         - containerPort: 8080
         resources:
