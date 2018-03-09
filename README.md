@@ -1,8 +1,10 @@
 # Kubernetes Sample
 
 ## Local setup with minikube
-[Link](https://github.com/kubernetes/minikube)
 ```bash
+# link
+https://github.com/kubernetes/minikube
+
 # setup minikube
 $ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 
@@ -38,6 +40,7 @@ $ minikube stop
 ```
 
 ## Pod
+```
 ===== Useful Commands =====
 kubectl get pod
 kubectl describe pod <pod>
@@ -48,13 +51,16 @@ kubectl exec <pod> -- command
 kubectl label pods <pod> mylabel=awesome
 kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
 =========================
+```
 
 ```bash
 kubectl create -f 01.pod.yml
 ```
 
 ## Service
+```
 ===== Useful Commands =====
 kubectl get service|svc
 kubectl delete service <service>
 =========================
+```
