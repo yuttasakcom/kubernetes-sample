@@ -21,40 +21,42 @@ $ sudo mv ./kubectl /usr/local/bin/kubectl
 
 ```
 
-## Example
+## Sample
 ```bash
 # create deployment
-$ kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.4 --port=8080
+$ kubectl run echoserver --image=k8s.gcr.io/echoserver:1.6 --port=8080
 
 # expose deployment / create service
-$ kubectl expose deployment hello-minikube --type=NodePort
+$ kubectl expose deployment echoserver --type=NodePort
 
 # show url
-$ minikube service hello-minikube --url
+$ minikube service echoserver --url
 
 # delete deployment
-$ kubectl delete deployment hello-minikube
+$ kubectl delete deployment echoserver
 
 # minikube stop
 $ minikube stop
 ```
 
 ## Pod
-```
+```bash
+# create pod
+$ kubectl create -f 01.pod.yml
+
+# delete pod
+$ kubectl delete -f 01.pod.yml
+
 ===== Useful Commands =====
 kubectl get pod
-kubectl describe pod <pod>
-kubectl expose pod <pod> --port=8080 --name=frontend
-kubectl port-forward <pod> 8080:8080
-kubectl attach <pod> -i
-kubectl exec <pod> -- command
-kubectl label pods <pod> mylabel=awesome
+kubectl describe pod <pod name>
+kubectl expose pod <pod name> --port=8080 --name=name-service
+kubectl port-forward <pod name> 8080:8080
+kubectl attach <pod name> -i
+kubectl exec <pod name> -- command
+kubectl label pods <pod name> mylabel=awesome
 kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
 =========================
-```
-
-```bash
-kubectl create -f 01.pod.yml
 ```
 
 ## Service
