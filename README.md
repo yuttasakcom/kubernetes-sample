@@ -50,6 +50,7 @@ $ kubectl delete -f 01.pod.yml
 ===== Useful Commands =====
 kubectl get pod
 kubectl describe pod <pod name>
+kubectl logs -f <pod name>
 kubectl expose pod <pod name> --port=8080 --name=name-service
 kubectl port-forward <pod name> 8080:8080
 kubectl attach <pod name> -i
