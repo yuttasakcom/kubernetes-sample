@@ -80,5 +80,6 @@ kubectl edit deployment/echoserver
 kubectl rollout history deployment/echoserver
 kubectl rollout undo deployment/echoserver
 kubectl rollout undo deployment/echoserver --to-revision=n
+kubectl scale deployments/<deployment name> --replicas=4
 =========================
 ```
