@@ -46,7 +46,8 @@ $ minikube stop
 
 ```bash
 # create pod
-$ kubectl create -f 01.pod.yml
+$ kubectl create -f 01.pod.yaml # basic
+$ kubectl apply -f 01.pod.yaml # advance
 
 # delete pod
 $ kubectl delete -f 01.pod.yml
@@ -61,6 +62,8 @@ kubectl attach <pod name> -i
 kubectl exec <pod name> -- command
 kubectl label pods <pod name> mylabel=awesome
 kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
+
+kubectl get pods -o wide
 =========================
 ```
 
@@ -68,8 +71,12 @@ kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
 
 ```
 ===== Useful Commands =====
-kubectl get service|svc
-kubectl delete service <service>
+$ kubectl apply -f 02.service.yaml
+$ minikube port
+# http://192.168.99.100:31000
+
+$kubectl get service|svc
+$kubectl delete service <service>
 =========================
 ```
 
@@ -88,4 +95,10 @@ kubectl rollout undo deployment/echoserver
 kubectl rollout undo deployment/echoserver --to-revision=n
 kubectl scale deployments/<deployment name> --replicas=4
 =========================
+```
+
+## Command
+
+```bash
+$ eval $(minikube docker-env)
 ```
