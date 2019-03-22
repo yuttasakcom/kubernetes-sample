@@ -1,6 +1,7 @@
 # Kubernetes Sample
 
 ## Local setup with minikube
+
 ```bash
 # link
 https://github.com/kubernetes/minikube
@@ -18,10 +19,12 @@ $ cat ~/.kube/config
 $ curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x kubectl
 $ chmod +x ./kubectl
 $ sudo mv ./kubectl /usr/local/bin/kubectl
+$ kubectl cluster-info
 
 ```
 
 ## Sample
+
 ```bash
 # create deployment
 $ kubectl run echoserver --image=k8s.gcr.io/echoserver:1.6 --port=8080
@@ -40,6 +43,7 @@ $ minikube stop
 ```
 
 ## Pod
+
 ```bash
 # create pod
 $ kubectl create -f 01.pod.yml
@@ -61,6 +65,7 @@ kubectl run -i --tty busybox --image=busybox --restart=Never -- sh
 ```
 
 ## Service
+
 ```
 ===== Useful Commands =====
 kubectl get service|svc
@@ -69,6 +74,7 @@ kubectl delete service <service>
 ```
 
 ## Deployment
+
 ```
 ===== Useful Commands =====
 kubectl get deployments
